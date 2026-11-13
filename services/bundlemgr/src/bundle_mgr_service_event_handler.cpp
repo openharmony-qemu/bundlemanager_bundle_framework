@@ -4708,7 +4708,7 @@ void BMSEventHandler::HandleSceneBoard() const
     bool sceneBoardEnable = Rosen::SceneBoardJudgement::IsSceneBoardEnabled();
     LOG_I(BMS_TAG_DEFAULT, "HandleSceneBoard sceneBoardEnable : %{public}d", sceneBoardEnable);
     bool stateChanged = false;
-    dataMgr->SetApplicationEnabled(ServiceConstants::SYSTEM_UI_BUNDLE_NAME, 0, !sceneBoardEnable,
+    dataMgr->SetApplicationEnabled(ServiceConstants::SYSTEM_UI_BUNDLE_NAME, 0, true,
         ServiceConstants::CALLER_NAME_BMS, Constants::DEFAULT_USERID, stateChanged);
     std::set<int32_t> userIds = dataMgr->GetAllUser();
     std::for_each(userIds.cbegin(), userIds.cend(), [dataMgr, sceneBoardEnable](const int32_t userId) {
